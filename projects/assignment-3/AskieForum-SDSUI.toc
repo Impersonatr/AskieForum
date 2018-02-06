@@ -1,0 +1,12 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}User Interface Prototypes}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}User Interface for Users of a Host}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}User Interface for The Host}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}User Interface for Homepage}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}User Interface for Welcome Page}{4}{subsection.1.4}
+\contentsline {section}{\numberline {2}Class Diagrams}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}ERD}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}UML}{6}{subsection.2.2}
+\contentsline {section}{\numberline {3}Sequence Diagrams}{7}{section.3}
+\contentsline {section}{\numberline {4}Meeting Report}{10}{section.4}
+\contentsline {section}{\numberline {5}Reference}{10}{section.5}
