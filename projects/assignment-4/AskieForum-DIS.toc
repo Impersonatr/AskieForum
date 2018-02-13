@@ -1,0 +1,12 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}UML Class Diagram}{2}{section.1}
+\contentsline {section}{\numberline {2}Packages}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Coupling}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Cohesive}{3}{subsection.2.2}
+\contentsline {section}{\numberline {3}Design Patterns}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Observer}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Visitor}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Factory}{4}{subsection.3.3}
+\contentsline {section}{\numberline {4}Interfaces and Contract}{4}{section.4}
+\contentsline {section}{\numberline {5}Exceptions \& Handling}{5}{section.5}
+\contentsline {section}{\numberline {6}Meeting Report}{5}{section.6}
