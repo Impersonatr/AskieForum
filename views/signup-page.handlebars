@@ -1,14 +1,50 @@
 {{> header}}
 
 <main>
-  <div>
-  	<div>Username: <input type="text" name="userName"></div>
-    <div>First Name: <input type="text" name="firstName"></div>
-    <div>Last Name: <input type="text" name="lastName"></div>
-    <div>Email: <input type="text" name="email"></div>
-    <div>Password: <input type="text" name="password"></div>
-    <div>Confirm: <input type="text" name="confirm"></div>
-  </div>
+	<style>
+		form {display: table;}
+		p {display: table-row;}
+		label {display: table-cell;}
+		input {display: table-cell;}
+	</style>
+
+	
+	<form action="_newUserInsert" method="post">
+		<p style="text-align:left;">
+			<label for="fName">First Name:</label>
+			<input type="text" name="fName" id="fName">
+		</p>
+		<br>
+		<p style="text-align:left;">
+			<label for="lName">Last Name:</label>
+			<input type="text" name="lName" id="lName">
+		</p>
+		<br>
+		<p style="text-align:left;">
+			<label for="Email">E-mail:</label>
+			<input type="text" name="Email" id="Email">
+		</p>
+		<br>
+		<p style="text-align:left;">
+			<label for="username">Username:</label>
+			<input type="text" name="username" id="username">
+		</p>
+		<br>
+		<p style="text-align:left;">
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password">
+		</p>
+		<br>
+		<p style="text-align:left;">
+			<label for="password"> Confirm Password:</label>
+			<input type="password" name="confirm" id="confirm">
+		</p>
+		<br>
+
+		
+	<input type="submit" value="Submit">
+	</form>
+
 </main>
 
 {{> footer}}
