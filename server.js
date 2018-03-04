@@ -32,24 +32,28 @@ app.get('/login', function (req, res)
 });
 
 
-app.get('/home', function (req, res) // , next
+app.get('/home', function (req, res)
 {
-  // var user = usersData[req.params.user];
+  res.render('home-page', 
+  {
+    title: "Forum List"
+  });
+});
 
-  // if (user) 
-  // {
-    res.render('home-page', 
-    {
-      title: "Forum List"
-      // user: user,
-      // userName: user.name,
-      // note: user.notes
-    });
-  // } 
-  // else 
-  // {
-  //   next();
-  // }
+app.get('/settings', function (req, res)
+{
+  res.render('user-settings', 
+  {
+    title: "Settings"
+  });
+});
+
+app.get('/signup', function (req, res)
+{
+  res.render('signup-page', 
+  {
+    title: "Sign-Up"
+  });
 });
 
 
