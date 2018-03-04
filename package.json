@@ -1,24 +1,23 @@
 {
-  "name": "assignment-4",
+  "name": "AskieForums",
   "version": "1.0.0",
-  "description": "Dynamic content with Express and Handlebars",
+  "description": "Forum to ask questions during lecture",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "handlebars views/partials/todo.handlebars -f public/todo-template.js",
-    "prestart": "npm run build",
+    "prestart": "npm run",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OSU-CS290-F16/master-assignment-4.git"
+    "url": "git+https://github.com/hydra314/AskieForum.git"
   },
   "author": "",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/OSU-CS290-F16/master-assignment-4/issues"
+    "url": "https://github.com/hydra314/AskieForum/issues"
   },
-  "homepage": "https://github.com/OSU-CS290-F16/master-assignment-4#readme",
+  "homepage": "https://github.com/hydra314/AskieForum/README.md",
   "dependencies": {
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0"
