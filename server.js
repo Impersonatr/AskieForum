@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) 
 {
+  console.log("== Got request for", req.url);
   res.render('index-page', 
   {
     title: "Welcome"
@@ -23,6 +24,7 @@ app.get('/', function (req, res)
 
 app.get('/login', function (req, res)
 {
+  console.log("== Got request for", req.url);
   res.render('login-page',
   {
     title: "Login"
@@ -34,6 +36,7 @@ app.get('/login', function (req, res)
 
 app.get('/home', function (req, res)
 {
+  console.log("== Got request for", req.url);
   res.render('home-page', 
   {
     title: "Forum List"
@@ -42,6 +45,7 @@ app.get('/home', function (req, res)
 
 app.get('/settings', function (req, res)
 {
+  console.log("== Got request for", req.url);
   res.render('user-settings', 
   {
     title: "Settings"
@@ -50,6 +54,7 @@ app.get('/settings', function (req, res)
 
 app.get('/signup', function (req, res)
 {
+  console.log("== Got request for", req.url);
   res.render('signup-page', 
   {
     title: "Sign-Up"
@@ -57,9 +62,25 @@ app.get('/signup', function (req, res)
 });
 
 
+app.post('/_newUserInsert', function (req, res)
+{
+  console.log("== Got POST request for", req.url);
+  res.status(200).send("You tried to create a user successfully");  
+
+});
+
+app.post('/_loginGetResult', function (req, res)
+{
+  console.log("== Got POST request for", req.url);
+  res.status(200).send("tried to log in successfully");  
+
+});
+
+
 
 app.get('*', function (req, res) 
 {
+  console.log("== Got request for", req.url);
   res.status(404).render('404-page',
   {
   	title: "Error 404"
