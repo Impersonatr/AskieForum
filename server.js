@@ -61,6 +61,23 @@ app.get('/signup', function (req, res)
   });
 });
 
+app.get('/member-forum', function (req, res)
+{
+  console.log("== Got request for", req.url);
+  res.render('member-forum-page', 
+  {
+    title: "Forum"
+  });
+});
+
+app.get('/host-forum', function (req, res)
+{
+  console.log("== Got request for", req.url);
+  res.render('host-forum-page', 
+  {
+    title: "Forum"
+  });
+});
 
 app.post('/_newUserInsert', function (req, res)
 {
