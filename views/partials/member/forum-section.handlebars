@@ -1,4 +1,59 @@
 <h2>Live Q and A</h2>
 
 {{!-- Questions --}}
+<div>
+  <h3 class="question-example" >Submiting Answers</h3>
+  <p>How do I submit an answer?</p>
+  <button onclick="unhideForumAnswerPost()">Answer Quesion</button> 
+</div>
+
+<div>
+  <h3 class="question-example" >Any Ideas?</h3>
+  <p>Anyone have any idea of what question to ask?</p>
+  <button onclick="unhideForumAnswerPost()">Answer Quesion</button> 
+</div>
+
+{{!-- Answer Question --}}
+<div id="forum-answer-post" class="hidden">
+  <form id="forum-answer-post-form">
+  	<div>
+      <textarea id="question-input">Write your answer here...</textarea>
+    </div>
+    <div style="align-content:center">
+      <button type="submit" id="button-answer-submit" onclick="hideForumAnswerPost()">Post Answer</button>
+      <button type="reset" value="Reset" onclick="hideForumAnswerPost()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+{{!-- Ask Question --}}
+<div class="forum-new-post">
+  <button id="button-question-add" onclick="unhideForumQuestionPost()">New Question</button>
+</div>
+<div id="forum-question-post" class="hidden">
+  <form id="forum-question-post-form">
+  	<div>
+      <textarea id="question-input">Ask your question here...</textarea>
+    </div>
+    <div>
+      <input type="checkbox">Annonymous?</input>
+      <label for="question-urgent">Urgency:</label>
+      <select class="question-urgent">
+  	    <option selected disabled>-</option>
+        <option value="1">1</option>
+  	    <option value="2">2</option>
+  	    <option value="3">3</option>
+  	    <option value="4">4</option>
+  	    <option value="5">5</option>
+      </select>
+	</div>
+	<div>
+	  <button type="submit" value="Submit" onclick="hideForumQuestionPost()" id="button-question-submit">Submit</button>
+      <button type="reset" value="Reset" onclick="hideForumQuestionPost()">Cancel</button>
+    </div>
+  </form>
+</div>
+<div>
+</div>
+
 

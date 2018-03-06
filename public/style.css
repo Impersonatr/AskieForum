@@ -107,3 +107,7 @@ footer .copyright {
   padding-right: 25px;
   font-weight: 200;
 }
+
+.hidden{
+  display: none;
+}
