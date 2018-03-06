@@ -1,0 +1,25 @@
+{
+  "name": "AskieForums",
+  "version": "1.0.0",
+  "description": "Forum to ask questions during lecture",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm run",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hydra314/AskieForum.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/hydra314/AskieForum/issues"
+  },
+  "homepage": "https://github.com/hydra314/AskieForum/README.md",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0"
+  }
+}
