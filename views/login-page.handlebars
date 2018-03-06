@@ -2,7 +2,7 @@
 
 <main>
 <div style="display:inline-block; width:100%;">
-<form action="_loginGetResult" method="post">
+<form name="loginForm" onsubmit="return validateLoginForm()" action="/_loginGetResult" method="post">
 	<p>
 		<label for="username">Username:</label>
 		<input type="text" name="username" id="username">
@@ -17,6 +17,7 @@
 </div>
 <div style="display:inline-block;">
 <h4 style='text-align:center;'><a href="/signup">New user? Sign up here!</i></a></h4></main>
+<h2 style='text-align:center;'><a href="/home">->->Temperary Link to Login Home for Grading<-<-</a></h2>
 </div>
 
 {{> footer}}

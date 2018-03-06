@@ -82,14 +82,14 @@ app.get('/host-forum', function (req, res)
 app.post('/_newUserInsert', function (req, res)
 {
   console.log("== Got POST request for", req.url);
-  res.status(200).send("You tried to create a user successfully");  
+  res.status(200).send("You tried to create a user successfully, (Press Back)");  
 
 });
 
 app.post('/_loginGetResult', function (req, res)
 {
   console.log("== Got POST request for", req.url);
-  res.status(200).send("tried to log in successfully");  
+  res.status(200).send("tried to log in successfully, (Press Back)");  
 
 });
 
