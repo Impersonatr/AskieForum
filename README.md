@@ -23,15 +23,22 @@ If you would like to manuver them manually, type these after http://askieforum.h
 
 
 The pages are:
-/				- Index Page
+
+/               - Index Page
+
 /login			- Login Page
+
 /home			- User Home Page
+
 /settings		- User Settings (not started yet)
+
 /signup			- SignUp Page
+
 /member-forum	- Member Forum Layout
+
 /host-forum		- Host Forum Layout (not started yet)
 
-EverythingElse  - Should be 404 page not found error
+/EverythingElse  - Should be 404 page not found error
 
 
 If you have any difficulty, let us know so we can make the site layout better!
