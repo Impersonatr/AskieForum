@@ -1,0 +1,125 @@
+\documentclass[12pt]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage{multirow}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{setspace}   %Allows double spacing with the \doublespacing command
+\usepackage{indentfirst}
+\usepackage{hyperref}
+
+\title{Askie Forum}
+\author{
+         Danh Nguyen\\
+         \texttt{Onid:nguydanh}\\
+         \texttt{nguydanh@oregonstate.edu}
+         \and
+         Joshua Bell\\
+         \texttt{Onid:belljos}\\
+         \texttt{belljos@oregonstate.edu}
+         \and
+         Cameron Kocher\\
+         \texttt{Onid:kochecam}\\
+         \texttt{kochecam@oregonstate.edu}
+         \and
+         Nicholas Newell\\
+         \texttt{Onid:newelln}\\
+         \texttt{newelln@oregonstate.edu}
+         \and
+         Andrew Morrill\\
+         \texttt{Onid:morrilan}\\
+         \texttt{morrilan@oregonstate.edu}
+         \and
+         GitHub: \url{https://github.com/hydra314/AskieForum}
+    }
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+\section{Product Release}
+
+\begin{flushleft}
+For now, our product is a website that can be accessed through any browser, though we may create mobile versions of Askie Forum in the future depending on the demand. The current version of Askie Forum is a Node.js application deployed with Heroku, and can be accessed using the following link: \url{http://askieforum.herokuapp.com}. Make sure to enable Javascript in your browser. Due to the modern tools used to design Askie Forum's layout, it may not function properly on older browsers. It is also not optimized for devices with smaller screens (such as tablets and smartphones), but it is still usable on these devices.
+\end{flushleft}
+
+\section{User Stories}
+
+\subsection{User Stories 1, 2, 3, and 5}
+\begin{flushleft}
+These user stories were essentially the same, and as they were all covered by a single UML diagram, they were treated as a single user story during the programming process. As the stories were rather vague, we interpreted them as simply requiring the fundamental functionalities of Askie Forum: logging in with instructor credentials (as the login process was modularized, this took care of logging in with student credentials as well), viewing available forums, selecting a forum, viewing the forum's home page, and using instructor-only tools (if logged in as an instructor) such as deleting threads and creating forums. Features for this user story were created by Andrew Morrill and Nicholas Newell. Unfortunately, the login features depended heavily on the database being functional, a task which was not able to be achieved until late in the production process. This significantly delayed the production of the login features.
+\end{flushleft}
+
+\begin{flushleft}
+The Handlebars templating tool was used to design all webpages, with each page being served dynamically by a Node.js script. While creating home pages, login screens, and forum listings was relatively simple, creating instructor tools was much trickier due to its dependency on the prior implementation of other features, such as posting and answering questions. As such, work on this task was delayed until after other user stories of greater importance were first implemented. Of the tasks defined in UML Sequence Diagram \#1 (for User Stories 1, 2, 3, and 5), the only one that remains partially implemented is the instructor tool feature. All other pages and features have been implemented and tested, and were completed after about three days of work. The UML sequence diagram was useful for the implementation of these user stories, but what proved to be more helpful was the class diagram made several weeks ago.
+\end{flushleft}
+
+\subsection{User Story 4}
+\begin{flushleft}
+This user story involved allowing students to ask questions and giving instructors the ability to answer students' questions. This entailed adding features such as thread creation, reply window functionality, and question thread viewing. Cameron Kocher and Danh Nguyen were the main contributors to the implementation of this user story, though this work was built on the foundation provided by Andrew Morrill and Nicholas Newell. 
+\end{flushleft}
+
+\begin{flushleft}
+We encountered some issues with the implementation of the reply screen, as we had initially sought to allow users to use BBCode to format their questions and answers nicely. We tried several different BBCode packages provided by Node Package Manager (npm), but none of them worked out the way we wanted them to. As such, we will add BBCode functionality in later versions of Askie Forum. Implementing this user story took approximately half a week, with much of that time being spent struggling with packages. The current system has not been fully tested, but from the limited amount of testing we've done so far, it seems to be functional. As stated earlier, we still need to add a way for users to format and stylize their posts, as such a feature would make Askie Forum much more visually appealing. As with the previous task (for User Stories 1, 2, 3, and 5), the UML sequence diagram was somewhat helpful when we started working on the task, but the class diagrams were much more useful in the long run.
+\end{flushleft}
+
+\subsection{User Stories 6, 8, and 10}
+\begin{flushleft}
+As these user stories are essentially identical, they will be treated as a single user story. It involves the creation of the following features: student login, forum listing and selection, session joining via an instructor-provided passcode, question creation, and anonymity toggling. Several of these features, such as student login permissions, forum listing and selection, and question creation were covered in previous user stories. As such, the unique features dealt with from this user story were anonymity toggling and passcode creation and usage. The features described by this user story were programmed by Andrew Morrill, Nicholas Newell, and Joshua Bell. Compared to other user stories, this one did not prove to be too troublesome. It took approximately two days of staggered work to complete.
+\end{flushleft}
+
+\begin{flushleft}
+The passcode and anonymity features are fully implemented and have been tested, but not extensively. Implementation was not overly difficult: passcode generation involved assigning a unique identification value to a forum and then running that ID through a hash function to produce a short passcode, while anonymity toggling simply required having a button that would allow for a user's name to not be displayed next to a question they asked or a reply they posted. The UML sequence diagram was quite useful while programming these features. While no additional functionality still needs to be added, we may want to clean up the code for the anonymity feature in the future.
+\end{flushleft}
+
+\subsection{User Stories 7 and 9}
+
+\begin{flushleft}
+This user story's unique features involved the addition of "liking" and "unliking" posts. As this is not a very important function, it was not completed during this period. It will be worked on later during the production cycle, as we considered it to not be a vital part of the core Askie experience. 
+\end{flushleft}
+
+\subsection{User Story 8}
+
+\begin{flushleft}
+As with the previous user story, the tasks described in User Story 8 were not deemed necessary for the first implementation of Askie Forum. User Story 8 described feedback, whether from student to teacher or from teacher to student. This feature will be added later on, but we did not deem it important enough to justify spending time on it during the first production period.
+\end{flushleft}
+
+\section{Design Changes and Rationale}
+\begin{flushleft}
+We did not have to ask the customer any questions, and there were very few changes made to the requirements and design specifications. Any changes made were quite minimal - the core functionality was implemented as planned, and any cosmetic changes were small and were done to facilitate production and prevent unnecessary delays.
+\end{flushleft}
+
+\section{Tests}
+\subsection{Major Tests}
+\begin{flushleft}
+Our main tests are mostly to do with text boxes.  All but one box in our entire site layout requires input of some kind.  Email for example, must contain the @ symbol and be in a specific format. User@Mail which we can really only test if there is an @ in the middle at this point.  In the future we will test if it actually exists, and send them a email verification.  This should reduce chance of users making fake accounts.
+\end{flushleft}
+
+\subsection{User Story Tests}
+\begin{flushleft}
+Most of the User Stories aren't exactly testable by us. 4 of them require actual real world use and interaction by an instructor and many students at the same time, as only they could judge whether we passed their requirements or not. Unrealistic to include tests for, though implementation of the separate interfaces is still in progress.  But the implementation of the login as, mentioned above, has been done as much as possible without the existence of a database.
+\end{flushleft}
+
+\subsection{Unimplemented Tests}
+\begin{flushleft}
+This is pretty much most of the tests.  So we need to make sure the anonymous posting works correctly.  So when you check the anonymous box, it will post it as "anonymous" instead of their username.  
+Testing whether the database triggers work or not is also impossible to test at this moment.  The OSU database does not work with Node.js and does not allow triggers.  Otherwise we could test that our database post times are accurate, could test the datatypes of the user input to further secure rather than if they are filled or not.  
+\end{flushleft}
+
+
+\section{Meeting Report}
+\begin{flushleft}
+As was the case in past weeks, our group was not able to meet in person. However, we communicated online using Discord in order to stay organized. This week, we worked on transforming Askie Forum from a concept into a usable product. We made a lot of progress, and we were able to finish the core features that make up Askie, such as account creation and usage, question thread creation, and forum creation for hosts. By the end of next week, we would like to finish up the user stories that we weren't able to get to this week - namely, implementing the "like" feature for posts and allowing users to provide feedback.
+\end{flushleft}
+
+\begin{flushleft}
+Due to midterms, homework assignments, and other sorts of commitments, some of our team members were not able to contribute much this week. Additionally, we were unable to meet with our customer. Danh Nguyen, who acted as the customer, was reasonable about the tasks. As mentioned earlier in this report, Andrew Morrill and Nicholas Newell did most of the HTML, CSS, and Node.js programming, while the other three members worked on the database and Javascript coding. \textbf{Section 4: Tests} was written by Andrew Morrill, while Cameron Kocher wrote the rest of this report.
+\end{flushleft}
+\end{document}
