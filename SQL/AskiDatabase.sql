@@ -1,4 +1,4 @@
-
+# CREATE DATABASE `Askie`;
 
 CREATE TABLE `User` (
   `userID` int(12) NOT NULL AUTO_INCREMENT,

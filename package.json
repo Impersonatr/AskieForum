@@ -20,6 +20,7 @@
   "homepage": "https://github.com/hydra314/AskieForum/README.md",
   "dependencies": {
     "express": "^4.14.0",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
   }
 }
