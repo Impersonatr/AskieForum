@@ -166,6 +166,20 @@ app.post('/_loginGetResult', function (req, res)
 
 });
 
+app.post('/_createGetResult', function (req, res)
+{
+  console.log("== Got POST request for", req.url);
+  res.status(200).send("tried to create a forum successfully, (Press Back)");  
+
+});
+
+app.post('/_joinGetResult', function (req, res)
+{
+  console.log("== Got POST request for", req.url);
+  res.status(200).send("tried to join a forum successfully, (Press Back)");  
+
+});
+
 app.get('*', function (req, res) 
 {
   console.log("== Got request for", req.url);
