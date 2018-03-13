@@ -3,64 +3,37 @@
 </div>
 	{{!-- Holds Join and Create Forum, holds hidden-status --}}
 <div id="add-forum-window" class="hidden"></div>
-  <table>
-  	<tr>
-  	  <td>
-  	  	{{!-- Join Forum --}}
-	    <div class="window-join-forum">
-	  	  <div class="window-header-container">
-	  	  <h2 class="window-header">Join a Forum</h2>
-	  	</div>
-	  	<div class="window-body">
-	  	  <div class="window-input-item">
-	  	  	<label for="window-join-forum-input-passcode">Enter Passcode:  </label>
-	  	  	<input type="text" id="window-join-forum-input-passcode">
-	  	  	
-	  	  </div>
-	  	</div>
-	  </td>
-	  <td>
-
-	  	{{!-- Make Forum --}}
-	    <div class="window-create-forum">
-	  	  <div class="window-header-container">
-	  	    <h2 class="window-header">Make a Forum</h2>
-	  	  </div>
-	  	  <div class="window-body">
-	  	    <div class="window-input-item">
-	  	  	  <label for="window-create-forum-input-name">*Forum Name:</label>
-	  	  	  <input type="text" id="window-create-forum-input-name">
-	  	    </div>
-	  	    <div class="window-input-item">
-	  	  	  <label for="window-create-forum-input-class">*Class Name:</label>
-	  	  	  <input type="text" id="window-create-forum-input-class">
-	  	    </div>
-	  	    <div class="window-input-item">
-	  	  	  <label for="window-create-forum-input-code">*Code(ex. CS160):</label>
-	  	  	<input type="text" id="window-create-forum-input-code">
-	  	    </div>
-	  	    <div class="window-input-item">
-	  	  	  <label for="window-create-forum-input-location">Class Location:</label>
-	  	  	  <input type="text" id="window-create-forum-input-name">
-	  	    </div>
-	  	  </div>
-	    </div>
-    </td></tr>
-    <tr><td>
-    	{{!-- Buttons to Join or Create a Forum --}}
-    	<center>
-          <button type="button" class="window-join-forum-accept-button">Join Forum</button>
-        </center>
-      </td>
-      <td>
-      	<center>
-          <button type="button" class="window-create-forum-accept-button">Create Forum</button>
-	    </center>
-	</td></tr>
-  </table>
-	<center>
-	  <div class="window-footer">
-	    <button type="button" class="window-cancel-button">Cancel</button>
-	  </div>
-	</center>
+	<div style="height:100%; width:45%; display:inline-block;">
+		<h2 class="window-header">Join a Forum</h2>
+		<form name="loginForm" onsubmit="return validateLoginForm()" action="/_joinGetResult" method="post">
+			<p>
+				<label for="joinPasscode">Enter Passcode:  </label>
+				<input type="text" id="joinPasscode">
+			</p>
+			<input type="submit" value="Join Forum">
+		</form>
+	</div>
+	
+  	<div style="height:100%; width:45%; display:inline-block;">
+		<h2 class="window-header">Make a Forum</h2>
+		<form name="loginForm" onsubmit="return validateLoginForm()" action="/_createGetResult" method="post">
+			<p>
+				<label for="fName">*Forum Name:</label>
+				<input type="text" id="fName">
+	  	    </p>
+	  	    <p>
+				<label for="cName">*Class Name:</label>
+				<input type="text" id="cName">
+	  	    </p>
+	  	    <p>
+				<label for="fInCode">*Code(ex. CS160):</label>
+				<input type="text" id="fInCode">
+	  	    </p>
+	  	    <p>
+				<label for="fLocation">Class Location:</label>
+				<input type="text" id="fLocation">
+	  	    </p>
+			<input type="submit" value="Join Forum">
+		</form>
+	</div>
 </div> 
