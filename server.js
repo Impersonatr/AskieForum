@@ -37,6 +37,10 @@ return con.query("SELECT * FROM user", function selectAll(err, result, fields){
   });
 }*/
 
+con.query("SELECT * FROM user", function(err, result, fields){
+  userData = result;
+});
+
 con.query("SELECT * FROM forum_user", function(err, result, fields){
   forumUserData = result;
 });
@@ -77,13 +81,9 @@ app.get('/', function (req, res)
 app.get('/login', function (req, res)
 {
   console.log("== Got request for", req.url);
-  con.query("SELECT * FROM user", function(err, result, fields){
-    userData = result;
-    res.render('login-page',
-    {
-      title: "Login",
-      userData: userData
-    });
+  res.render('login-page',
+  {
+    title: "Login"
   });
 });
 
@@ -105,6 +105,16 @@ app.get('/about', function (req, res)
     title: "About"
   });
 });
+
+app.get('/forum-list', function (req, res)
+{
+  console.log("== Got request for", req.url);
+  res.render('forum-list',
+  {
+    title: "Forum List",
+    forums: "forumData"
+  });
+})
 
 app.get('/settings', function (req, res)
 {
