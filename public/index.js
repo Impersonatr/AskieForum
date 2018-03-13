@@ -68,3 +68,31 @@ function validateLoginForm() {
         return false;
     }
 }
+
+function validateJoinForm() {
+    var code = document.forms["joinForm"]["joinPasscode"].value;
+    
+    if (code == "") {
+    	alert("You need to enter a passcode");
+        return false;
+    }
+}
+
+function validateCreateForm() {
+    var fName = document.forms["createForm"]["fName"].value;
+    var cName = document.forms["createForm"]["cName"].value;
+	var code = document.forms["createForm"]["fInCode"].value;
+
+    if (fName == "") {
+        alert("Form must have a name!");
+        return false;
+    }
+    if (cName == "") {
+    	alert("Class name must be filled out");
+        return false;
+    }
+	if (code == "") {
+    	alert("Forum must have a code");
+        return false;
+    }
+}
