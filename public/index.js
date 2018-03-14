@@ -23,50 +23,90 @@ function hideForumAnswerPost() {
 }
 
 function validateSignupForm() {
-    var user = document.forms["signupForm"]["username"].value;
-    var first = document.forms["signupForm"]["fName"].value;
-    var last = document.forms["signupForm"]["lName"].value;
-    var email = document.forms["signupForm"]["Email"].value;
-    var pass = document.forms["signupForm"]["password"].value;
-    var conf = document.forms["signupForm"]["confirm"].value;
-    if (first == "") {
-    	alert("First Name must be filled out");
-        return false;
+
+    var inputs = [
+        document.forms["signupForm"]["fName"].value,
+        document.forms["signupForm"]["lName"].value,
+        document.forms["signupForm"]["Email"].value,
+        document.forms["signupForm"]["username"].value,
+        document.forms["signupForm"]["password"].value,
+        document.forms["signupForm"]["confirm"].value
+    ];
+
+    var elements = [
+        document.getElementById("sfName"),
+        document.getElementById("slName"),
+        document.getElementById("sEmail"),
+        document.getElementById("susername"),
+        document.getElementById("spassword"),
+        document.getElementById("sconfirm")
+    ];
+
+    // Change color of empty fields and revert for non-empty fields
+    var filled = true;
+    for (var i = 0; i < inputs.length; i++)
+    {
+        if (inputs[i] == "")
+        {
+            elements[i].classList.add('empty');
+            filled = false;
+        }
+        else
+        {
+            elements[i].classList.remove('empty');
+        }
     }
-    if (last == "") {
-    	alert("Last Name must be filled out");
-        return false;
+    // Remove unmatch class if password and confirm are the same
+    if (elements[5] == elements[4])
+    {
+        elements[4].classList.remove('unmatch');
+        elements[5].classList.remove('unmatch');
     }
-    if (email== "") {
-    	alert("Email must be filled out");
-        return false;
+    // If at least one required field is unfilled, then alert
+    if (!filled)
+    {
+        alert("One or more of the signup fields or empty.  Please fill them!");
+    } // Add unmatch class if password and confirm are not the same
+    else if (elements[5] != elements[4])
+    {
+        alert("Password and Confirm do not match!");
+        elements[4].classList.add('unmatch');
+        elements[5].classList.add('unmatch');
+        filled = false;
     }
-    if (user == "") {
-        alert("Username must be filled out");
-        return false;
-    }
-    if (pass == "") {
-    	alert("Password must be filled out");
-        return false;
-    }
-    if (pass != conf) {
-    	alert("Passwords don't match!");
-        return false;
-    }
+    return filled;
 }
 
 function validateLoginForm() {
     var user = document.forms["loginForm"]["username"].value;
     var pass = document.forms["loginForm"]["password"].value;
 
+    var filled = true;
     if (user == "") {
-        alert("Username must be filled out");
-        return false;
+        var element = document.getElementById("username");
+        element.classList.add('empty');
+        filled = false;
+    }
+    else
+    {
+        var element = document.getElementById("username");
+        element.classList.remove('empty');
     }
     if (pass == "") {
-    	alert("Password must be filled out");
-        return false;
+    	var element = document.getElementById("password");
+        element.classList.add('empty');
+        filled = false;
     }
+    else
+    {
+        var element = document.getElementById("password");
+        element.classList.remove('empty');
+    }
+    if (!filled)
+    {
+        alert("One or more of the required fields are empty!");
+    }
+    return filled;
 }
 
 function validateJoinForm() {

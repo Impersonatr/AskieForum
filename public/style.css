@@ -111,3 +111,15 @@ footer .copyright {
 .hidden{
   display: none;
 }
+
+.empty {
+  background-color: red;
+}
+.unmatch {
+  background-color: orange;
+}
+/* form input[type=text] {
+  color: red;
+  background-color: blue;
+}
+*/
