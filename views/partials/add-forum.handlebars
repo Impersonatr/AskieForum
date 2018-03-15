@@ -5,10 +5,11 @@
 <div id="add-forum-window" >
 	<div id="joinForum" class="hidden">
 		<h2 class="window-header">Join a Forum</h2>
-		<form name="joinForm" onsubmit="return validateJoinForm()" action="/_joinGetResult" method="post">
+		<!--<form name="joinForm" onsubmit="return validateJoinForm()" action="/_joinGetResult" method="post">-->
+		<form class="JoinForum">
 			<p>
 				<label for="joinPasscode">Enter Passcode:  </label>
-				<input type="text" id="joinPasscode">
+				<input type="text" id="joinPasscode" class="passcode">
 			</p>
 			<input type="submit" value="Join Forum">
 		</form>
@@ -16,24 +17,25 @@
 	
   	<div id="createForum" class="hidden">
 		<h2 class="window-header">Make a Forum</h2>
-		<form name="createForm" onsubmit="return validateCreateForm()"action="/_createGetResult" method="post">
+		<!--<form name="createForm" onsubmit="return validateCreateForm()"action="/_createGetResult" method="post">-->
+		<form class="CreateForum">
 			<p>
 				<label for="fName">*Forum Name:</label>
-				<input type="text" id="fName">
+				<input type="text" id="fName" class="forumName">
 	  	    </p>
 	  	    <p>
 				<label for="cName">*Class Name:</label>
-				<input type="text" id="cName">
+				<input type="text" id="cName" class="className">
 	  	    </p>
 	  	    <p>
 				<label for="fInCode">*Code(ex. CS160):</label>
-				<input type="text" id="fInCode">
+				<input type="text" id="fInCode" class="classCode">
 	  	    </p>
 	  	    <p>
 				<label for="fLocation">Class Location:</label>
-				<input type="text" id="fLocation">
+				<input type="text" id="fLocation" class="classLocation">
 	  	    </p>
-			<input type="submit" value="Join Forum">
+			<input type="submit" value="Create Forum">
 		</form>
 		<button id="cancel-forum-add" onclick="hideForumAdd()">Cancel</button>
 	</div>

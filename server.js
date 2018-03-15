@@ -152,10 +152,9 @@ app.post('/login', (req, res) => {
 
 });*/
 
-app.post('/_createGetResult', (req, res) => {
+app.post('/createForum', (req, res) => {
   store
     .createForum({
-      forumID: req.body.forumID,
       forumName: req.body.forumName,
       className: req.body.className,
       classCode: req.body.classCode,
@@ -170,7 +169,7 @@ app.post('/_createGetResult', (req, res) => {
   res.status(200).send("tried to join a forum successfully, (Press Back)");
 });*/
 
-app.post('/_joinGetResult', (req, res) => {
+app.post('/joinForum', (req, res) => {
   store
     .authenticateForum({
       passcode: req.body.passcode

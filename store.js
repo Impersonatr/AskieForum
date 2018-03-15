@@ -20,24 +20,26 @@ module.exports = {
 			});
 	},
 
-	createForum ({ forumID, forumName, className, classCode, classLocation }){
+	createForum ({ forumName, className, classCode, classLocation }){
 		console.log(`Add forum ${forumName}`);
+		var creationDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+		var hostID = 1;
 		return knex('forum').insert({
-			forumID,
 			forumName,
 			className,
 			classCode,
 			creationDate,
-			classLocation
+			classLocation,
+			hostID
 		});
 	},
 
 	authenticateForum ({ passcode }){
 		console.log(`Trying to join forum using passcode ${passcode}`);
-		return knex('forum').where({ forumID })
+		return knex('forum').where({ passcode })
 			.then(([forum]) => {
 				if(!forum) return { success: false };
-				return { success: forumID == forum.forumID };
+				return { success: passcode == forum.classCode };
 			});
 	}
 }

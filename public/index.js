@@ -1,27 +1,59 @@
-const CreateUser =  document.querySelector('.CreateUser');
-CreateUser.addEventListener('submit', (e) => {
-    console.log('Creating user...');
-    e.preventDefault();
-    const firstName = CreateUser.querySelector('.firstName').value;
-    const lastName = CreateUser.querySelector('.lastName').value;
-    const username = CreateUser.querySelector('.username').value;
-    const password = CreateUser.querySelector('.password').value;
-    post('/createUser', { firstName, lastName, username, password });
-    CreateUser.reset();
-});
+if(document.querySelector('.CreateUser') != null){
+    var CreateUser =  document.querySelector('.CreateUser');
+    CreateUser.addEventListener('submit', (e) => {
+        console.log('Creating user...');
+        e.preventDefault();
+        const firstName = CreateUser.querySelector('.firstName').value;
+        const lastName = CreateUser.querySelector('.lastName').value;
+        const username = CreateUser.querySelector('.username').value;
+        const password = CreateUser.querySelector('.password').value;
+        post('/createUser', { firstName, lastName, username, password });
+        CreateUser.reset();
+    });
+}
 
-const Login = document.querySelector('.Login');
-Login.addEventListener('submit', (e) => {
-    console.log('Attempting login...');
-    e.preventDefault();
-    const username = Login.querySelector('.username').value;
-    const password = Login.querySelector('.password').value;
-    post('/login', { username, password })
-        .then(({ status }) => {
-            if(status == 200) alert('Logged in successfully!');
-            else alert('Incorret login credentials.');
-        });
-});
+if(document.querySelector('.Login') != null){
+    var Login = document.querySelector('.Login');
+    Login.addEventListener('submit', (e) => {
+        console.log('Attempting login...');
+        e.preventDefault();
+        const username = Login.querySelector('.username').value;
+        const password = Login.querySelector('.password').value;
+        post('/login', { username, password })
+            .then(({ status }) => {
+                if(status == 200) alert('Logged in successfully!');
+                else alert('Invalid login credentials.');
+            });
+    });
+}
+
+if(document.querySelector('.JoinForum') != null){
+    var JoinForum = document.querySelector('.JoinForum');
+    JoinForum.addEventListener('submit', (e) => {
+        console.log('Attempting to join forum...');
+        e.preventDefault();
+        const passcode = JoinForum.querySelector('.passcode').value;
+        post('/joinForum', { passcode })
+            .then(({ status }) => {
+                if(status == 200) alert('Successfully joined forum!');
+                else alert('Invalid forum passcode.');
+            });
+    });
+}
+
+if(document.querySelector('.CreateForum') != null){
+    var CreateForum = document.querySelector('.CreateForum');
+    CreateForum.addEventListener('submit', (e) => {
+        console.log('Creating forum...');
+        e.preventDefault();
+        const forumName = CreateForum.querySelector('.forumName').value;
+        const className = CreateForum.querySelector('.className').value;
+        const classCode = CreateForum.querySelector('.classCode').value;
+        const classLocation = CreateForum.querySelector('.classLocation').value;
+        post('/createForum', { forumName, className, classCode, classLocation });
+        CreateForum.reset();
+    });
+}
 
 function post(path, data){
     return window.fetch(path, {
