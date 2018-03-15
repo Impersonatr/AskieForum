@@ -7,9 +7,11 @@
       <h2>Ask a Question!</h2>
     </div>
     <form id="forum-question-post-form" >
-      
       <div>
-        <textarea id="question-input" rows="10" placeholder="Ask your question here..."></textarea>
+        <textarea class="question-title-input" id="question-title-input" rows="1" placeholder="Add a Title!"></textarea>
+      </div>
+      <div>
+        <textarea class="question-text-input" id="question-input" rows="10" placeholder="Ask your question here..."></textarea>
       </div>
       <div>
         <input type="checkbox">Anonymous?</input>
@@ -45,16 +47,21 @@
 </div>
 
 {{!-- Answer Question --}}
-<div id="forum-answer-post" class="hidden">
-  <form id="forum-answer-post-form">
-  	<div>
-      <textarea id="question-input" placeholder="Write your answer here..."></textarea>
+<div id="forum-answer-post" class="hidden add-question-container">
+  <div class="add-question-form">
+    <div class="forum-question-post-header">
+      <h2>Provide an Answer!</h2>
     </div>
-    <div style="align-content:center">
-      <button type="submit" id="button-answer-submit" onclick="hideForumAnswerPost()">Post Answer</button>
-      <button type="reset" value="Reset" onclick="hideForumAnswerPost()">Cancel</button>
-    </div>
-  </form>
+    <form id="forum-answer-post-form">
+    	<div>
+        <textarea class="question-text-input" id="answer-input" rows="10" placeholder="Write your answer here..."></textarea>
+      </div>
+      <div style="align-content:center">
+        <button type="submit" id="button-answer-submit" onclick="hideForumAnswerPost()">Post Answer</button>
+        <button type="reset" value="Reset" onclick="hideForumAnswerPost()">Cancel</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 

@@ -129,6 +129,7 @@ footer {
   border-radius: 15px;
   color: white;
 }
+
 .forum-question-post-header{
   position: relative;
   text-align: center;
@@ -137,11 +138,22 @@ footer {
   border-radius: 20px
 }
 
+
 #forum-question-post-form{
   padding: 20px 25px;
 }
-#question-input{
+
+#forum-answer-post-form{
+  padding: 20px 25px;
+}
+
+.question-title-input{
   width: 100%;
+  font-size: 24px;
+}
+.question-text-input{
+  width: 100%;
+  font-size: 16px;
 }
 .empty {
   background-color: red;
