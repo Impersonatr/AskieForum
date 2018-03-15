@@ -1,16 +1,15 @@
 const knex = require('knex')(require('./knexfile'));
 
 module.exports = {
-	createUser ({ ID, username, password, firstName, lastName }){
+	createUser ({ firstName, lastName, username, password }){
 		console.log(`Add user ${username} with password ${password}`);
 		return knex('user').insert({
-			ID,
 			firstName,
 			lastName,
 			username,
 			password
-		});
-	}
+		}).debug()
+	},
 
 	authenticateUser ({ username, password }){
 		console.log(`Authenticating user ${username}`);
@@ -19,7 +18,7 @@ module.exports = {
 				if(!user) return { success: false };
 				return { success: password == user.password };
 			});
-	}
+	},
 
 	createForum ({ forumID, forumName, className, classCode, classLocation }){
 		console.log(`Add forum ${forumName}`);
@@ -31,12 +30,12 @@ module.exports = {
 			creationDate,
 			classLocation
 		});
-	}
+	},
 
 	authenticateForum ({ passcode }){
 		console.log(`Trying to join forum using passcode ${passcode}`);
 		return knex('forum').where({ forumID })
-			.then(([forum]) => 
+			.then(([forum]) => {
 				if(!forum) return { success: false };
 				return { success: forumID == forum.forumID };
 			});

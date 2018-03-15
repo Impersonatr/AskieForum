@@ -2,7 +2,23 @@
 
 <main>
 <div style="display:inline-block; width:100%;">
-<form name="loginForm" onsubmit="return validateLoginForm()" action="/_loginGetResult" method="post">
+<form class="Login" name="loginForm">
+	<h1>Login</h1>
+	<p>
+		<label for="username">Username:</label>
+		<input type="text" class="username" id="username">
+	</p>
+	<p>
+		<label for="password">Password:</label>
+		<input type="password" class="password" id="password">
+	</p>
+
+	<input type="submit" value="Submit">
+</form>
+
+<div class="CreateUser"></div>
+
+<!--<form name="loginForm" onsubmit="return validateLoginForm()" action="/_loginGetResult" method="post">
 	<p>
 		<label for="username">Username:</label>
 		<input type="text" name="username" id="username">
@@ -13,7 +29,7 @@
 	</p>
 
 	<input type="submit" value="Submit">
-</form>
+</form>-->
 </div>
 <div style="display:inline-block;">
 <h4 style='text-align:center;'><a href="/signup">New user? Sign up here!</i></a></h4></main>

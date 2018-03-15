@@ -6,6 +6,7 @@ const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
+const store = require('./store');
 // var usersData = require('./users-data');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -114,14 +115,13 @@ app.get('/host-forum', function (req, res)
 
 });*/
 
-app.post('/_newUserInsert', (req, res) => {
+app.post('/createUser', (req, res) => {
   store
     .createUser({
-      ID: req.body.ID,
-      username: req.body.username,
-      password: req.body.password,
       firstName: req.body.firstName,
-      lastName: req.body.lastName
+      lastName: req.body.lastName,
+      username: req.body.username,
+      password: req.body.password
     })
     .then( () => res.sendStatus(200));
 });
@@ -133,7 +133,7 @@ app.post('/_newUserInsert', (req, res) => {
 
 });*/
 
-app.post('/_loginGetResult', (req, res) => {
+app.post('/login', (req, res) => {
   store
     .authenticateUser({
       username: req.body.username,

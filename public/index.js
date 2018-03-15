@@ -1,3 +1,39 @@
+const CreateUser =  document.querySelector('.CreateUser');
+CreateUser.addEventListener('submit', (e) => {
+    console.log('Creating user...');
+    e.preventDefault();
+    const firstName = CreateUser.querySelector('.firstName').value;
+    const lastName = CreateUser.querySelector('.lastName').value;
+    const username = CreateUser.querySelector('.username').value;
+    const password = CreateUser.querySelector('.password').value;
+    post('/createUser', { firstName, lastName, username, password });
+    CreateUser.reset();
+});
+
+const Login = document.querySelector('.Login');
+Login.addEventListener('submit', (e) => {
+    console.log('Attempting login...');
+    e.preventDefault();
+    const username = Login.querySelector('.username').value;
+    const password = Login.querySelector('.password').value;
+    post('/login', { username, password })
+        .then(({ status }) => {
+            if(status == 200) alert('Logged in successfully!');
+            else alert('Incorret login credentials.');
+        });
+});
+
+function post(path, data){
+    return window.fetch(path, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+}
+
 function unhideForumQuestionPost() {
 	var element = document.getElementById("forum-question-post");
 	hideForumAnswerPost();
