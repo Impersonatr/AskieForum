@@ -77,7 +77,7 @@ function validateSignupForm() {
         }
     }
     // Remove unmatch class if password and confirm are the same
-    if (elements[5] == elements[4])
+    if (inputs[5] == inputs[4])
     {
         elements[4].classList.remove('unmatch');
         elements[5].classList.remove('unmatch');
@@ -87,7 +87,7 @@ function validateSignupForm() {
     {
         alert("One or more of the signup fields or empty.  Please fill them!");
     } // Add unmatch class if password and confirm are not the same
-    else if (elements[5] != elements[4])
+    else if (inputs[5] != inputs[4])
     {
         alert("Password and Confirm do not match!");
         elements[4].classList.add('unmatch');
