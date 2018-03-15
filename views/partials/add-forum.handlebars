@@ -1,9 +1,9 @@
 <div class="add-forum-button-container">
-  <button id="add-note-Button">+ Forum</button>
+  <button id="add-note-Button" onclick="unhideForumAdd()">+ Forum</button>
 </div>
 	{{!-- Holds Join and Create Forum, holds hidden-status --}}
-<div id="add-forum-window" class="hidden"></div>
-	<div style="height:100%; width:45%; display:inline-block;">
+<div id="add-forum-window" >
+	<div id="joinForum" class="hidden">
 		<h2 class="window-header">Join a Forum</h2>
 		<form name="joinForm" onsubmit="return validateJoinForm()" action="/_joinGetResult" method="post">
 			<p>
@@ -14,9 +14,9 @@
 		</form>
 	</div>
 	
-  	<div style="height:100%; width:45%; display:inline-block;">
+  	<div id="createForum" class="hidden">
 		<h2 class="window-header">Make a Forum</h2>
-		<form name="createForm" onsubmit="return validateCreateForm()" action="/_createGetResult" method="post">
+		<form name="createForm" onsubmit="return validateCreateForm()"action="/_createGetResult" method="post">
 			<p>
 				<label for="fName">*Forum Name:</label>
 				<input type="text" id="fName">
@@ -35,5 +35,7 @@
 	  	    </p>
 			<input type="submit" value="Join Forum">
 		</form>
+		<button id="cancel-forum-add" onclick="hideForumAdd()">Cancel</button>
 	</div>
+	
 </div> 

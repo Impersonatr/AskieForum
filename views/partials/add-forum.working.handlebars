@@ -1,0 +1,39 @@
+<div class="add-forum-button-container">
+  <button id="add-note-Button">+ Forum</button>
+</div>
+	{{!-- Holds Join and Create Forum, holds hidden-status --}}
+<div id="add-forum-window" class="hidden"></div>
+	<div style="height:100%; width:45%; display:inline-block;">
+		<h2 class="window-header">Join a Forum</h2>
+		<form name="joinForm" onsubmit="return validateJoinForm()" action="/_joinGetResult" method="post">
+			<p>
+				<label for="joinPasscode">Enter Passcode:  </label>
+				<input type="text" id="joinPasscode">
+			</p>
+			<input type="submit" value="Join Forum">
+		</form>
+	</div>
+	
+  	<div style="height:100%; width:45%; display:inline-block;">
+		<h2 class="window-header">Make a Forum</h2>
+		<form name="createForm" onsubmit="return validateCreateForm()" action="/_createGetResult" method="post">
+			<p>
+				<label for="fName">*Forum Name:</label>
+				<input type="text" id="fName">
+	  	    </p>
+	  	    <p>
+				<label for="cName">*Class Name:</label>
+				<input type="text" id="cName">
+	  	    </p>
+	  	    <p>
+				<label for="fInCode">*Code(ex. CS160):</label>
+				<input type="text" id="fInCode">
+	  	    </p>
+	  	    <p>
+				<label for="fLocation">Class Location:</label>
+				<input type="text" id="fLocation">
+	  	    </p>
+			<input type="submit" value="Join Forum">
+		</form>
+	</div>
+</div> 

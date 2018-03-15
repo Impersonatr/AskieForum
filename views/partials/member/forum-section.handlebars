@@ -1,5 +1,38 @@
 <h2>Live Q and A</h2>
 
+{{!-- Creates the Ask Question Post--}}
+<div id="forum-question-post" class="hidden add-question-container">
+  <div class="add-question-form"> 
+    <div class="forum-question-post-header">
+      <h2>Ask a Question!</h2>
+    </div>
+    <form id="forum-question-post-form" >
+      <div>
+        <textarea class="question-title-input" id="question-title-input" rows="1" placeholder="Add a Title!"></textarea>
+      </div>
+      <div>
+        <textarea class="question-text-input" id="question-input" rows="10" placeholder="Ask your question here..."></textarea>
+      </div>
+      <div>
+        <input type="checkbox">Anonymous?</input>
+        <label for="question-urgent">Urgency:</label>
+        <select class="question-urgent">
+          <option selected disabled>-</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div>
+      <button type="submit" value="Submit" onclick="hideForumQuestionPost()" id="button-question-submit">Submit</button>
+      <button type="reset" value="Reset" onclick="hideForumQuestionPost()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 {{!-- Questions --}}
 <div>
   <h3 class="question-example" >Submitting Answers</h3>
@@ -14,45 +47,35 @@
 </div>
 
 {{!-- Answer Question --}}
-<div id="forum-answer-post" class="hidden">
-  <form id="forum-answer-post-form">
-  	<div>
-      <textarea id="question-input" placeholder="Write your answer here..."></textarea>
+<div id="forum-answer-post" class="hidden add-question-container">
+  <div class="add-question-form">
+    <div class="forum-question-post-header">
+      <h2>Provide an Answer!</h2>
     </div>
-    <div style="align-content:center">
-      <button type="submit" id="button-answer-submit" onclick="hideForumAnswerPost()">Post Answer</button>
-      <button type="reset" value="Reset" onclick="hideForumAnswerPost()">Cancel</button>
-    </div>
-  </form>
+    <form id="forum-answer-post-form">
+    	<div>
+        <textarea class="question-text-input" id="answer-input" rows="10" placeholder="Write your answer here..."></textarea>
+      </div class="submit-quesion">
+      <div style="align-content:center">
+        <button class="button-" type="submit" id="button-answer-submit" onclick="hideForumAnswerPost()">Post Answer</button>
+      </div class="submit-quesion">
+      <div>
+        <button class="button-cancel-quesion" type="reset" value="Reset" onclick="hideForumAnswerPost()">Cancel</button>
+      </div>
+    </form>
+  </div>
 </div>
 
-{{!-- Ask Question --}}
+
+
+{{!-- Button to unhide the container --}}
 <div class="forum-new-post">
   <button id="button-question-add" onclick="unhideForumQuestionPost()">New Question</button>
 </div>
-<div id="forum-question-post" class="hidden">
-  <form id="forum-question-post-form">
-  	<div>
-      <textarea id="question-input" placeholder="Ask your question here..."></textarea>
-    </div>
-    <div>
-      <input type="checkbox">Anonymous?</input>
-      <label for="question-urgent">Urgency:</label>
-      <select class="question-urgent">
-  	    <option selected disabled>-</option>
-        <option value="1">1</option>
-  	    <option value="2">2</option>
-  	    <option value="3">3</option>
-  	    <option value="4">4</option>
-  	    <option value="5">5</option>
-      </select>
-	</div>
-	<div>
-	  <button type="submit" value="Submit" onclick="hideForumQuestionPost()" id="button-question-submit">Submit</button>
-      <button type="reset" value="Reset" onclick="hideForumQuestionPost()">Cancel</button>
-    </div>
-  </form>
-</div>
+
+
+
+
 <div>
 </div>
 

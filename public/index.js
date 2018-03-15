@@ -38,6 +38,7 @@ function unhideForumQuestionPost() {
 	var element = document.getElementById("forum-question-post");
 	hideForumAnswerPost();
 	element.classList.remove('hidden');
+
 }
 
 function hideForumQuestionPost() {
@@ -54,6 +55,25 @@ function unhideForumAnswerPost() {
 function hideForumAnswerPost() {
 	var element = document.getElementById("forum-answer-post");
 	element.classList.add('hidden');
+}
+
+function hideForumAdd() {
+    var element1 = document.getElementById("joinForum");
+    var element2 = document.getElementById("createForum");
+    element1.classList.remove('join-forum-container');
+    element2.classList.remove('create-forum-container');
+    element1.classList.add('hidden');
+    element2.classList.add('hidden');
+    
+}
+function unhideForumAdd() {
+    var element1 = document.getElementById("joinForum");
+    var element2 = document.getElementById("createForum");
+    element1.classList.remove('hidden');
+    element2.classList.remove('hidden');
+    element1.classList.add('join-forum-container');
+    element2.classList.add('create-forum-container');
+    
 }
 
 function validateSignupForm() {
@@ -91,7 +111,7 @@ function validateSignupForm() {
         }
     }
     // Remove unmatch class if password and confirm are the same
-    if (elements[5] == elements[4])
+    if (inputs[5] == inputs[4])
     {
         elements[4].classList.remove('unmatch');
         elements[5].classList.remove('unmatch');
@@ -101,7 +121,7 @@ function validateSignupForm() {
     {
         alert("One or more of the signup fields or empty.  Please fill them!");
     } // Add unmatch class if password and confirm are not the same
-    else if (elements[5] != elements[4])
+    else if (inputs[5] != inputs[4])
     {
         alert("Password and Confirm do not match!");
         elements[4].classList.add('unmatch');
