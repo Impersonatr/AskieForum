@@ -1,5 +1,3 @@
-
-
 function unhideForumQuestionPost() {
 	var element = document.getElementById("forum-question-post");
 	hideForumAnswerPost();

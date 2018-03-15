@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/hydra314/AskieForum/README.md",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "knex": "^0.14.4",
     "mysql": "^2.15.0"
   }
 }
