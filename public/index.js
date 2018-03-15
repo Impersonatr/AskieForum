@@ -4,6 +4,7 @@ function unhideForumQuestionPost() {
 	var element = document.getElementById("forum-question-post");
 	hideForumAnswerPost();
 	element.classList.remove('hidden');
+
 }
 
 function hideForumQuestionPost() {
@@ -20,6 +21,25 @@ function unhideForumAnswerPost() {
 function hideForumAnswerPost() {
 	var element = document.getElementById("forum-answer-post");
 	element.classList.add('hidden');
+}
+
+function hideForumAdd() {
+    var element1 = document.getElementById("joinForum");
+    var element2 = document.getElementById("createForum");
+    element1.classList.remove('join-forum-container');
+    element2.classList.remove('create-forum-container');
+    element1.classList.add('hidden');
+    element2.classList.add('hidden');
+    
+}
+function unhideForumAdd() {
+    var element1 = document.getElementById("joinForum");
+    var element2 = document.getElementById("createForum");
+    element1.classList.remove('hidden');
+    element2.classList.remove('hidden');
+    element1.classList.add('join-forum-container');
+    element2.classList.add('create-forum-container');
+    
 }
 
 function validateSignupForm() {
