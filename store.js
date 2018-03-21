@@ -45,8 +45,10 @@ module.exports = {
 
 	postQuestion ({ title, body, anonymous, urgency }){
 		console.log(`Trying to post a question`);
+		var postTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
 		return knex('question').insert({
 			title,
+			postTime,
 			body,
 			anonymous,
 			urgency
@@ -55,7 +57,9 @@ module.exports = {
 
 	postAnswer ({ body, anonymous }){
 		console.log(`Trying to post an answer`);
+		var postTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
 		return knex('response').insert({
+			postTime,
 			body,
 			anonymous
 		}).debug();

@@ -72,7 +72,7 @@ if(document.querySelector('.PostQuestion') != null){
 if(document.querySelector('.postAnswer') != null){
     var postAnswer = document.querySelector('.postAnswer');
     postAnswer.addEventListener('submit', (e) => {
-        console('Posting response...');
+        console.log('Posting response...');
         e.preventDefault();
         const body = postAnswer.querySelector('.question-text-input').value;
         const anonymous = postAnswer.querySelector('.anonymous-checkbox').checked;
