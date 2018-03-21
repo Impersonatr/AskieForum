@@ -6,7 +6,7 @@
     <div class="forum-question-post-header">
       <h2>Ask a Question!</h2>
     </div>
-    <form id="forum-question-post-form" >
+    <form id="forum-question-post-form" class="PostQuestion">
       <div>
         <textarea class="question-title-input" id="question-title-input" rows="1" placeholder="Add a Title!"></textarea>
       </div>
@@ -14,7 +14,7 @@
         <textarea class="question-text-input" id="question-input" rows="10" placeholder="Ask your question here..."></textarea>
       </div>
       <div>
-        <input type="checkbox">Anonymous?</input>
+        <input type="checkbox" class="anonymous-checkbox">Anonymous?</input>
         <label for="question-urgent">Urgency:</label>
         <select class="question-urgent">
           <option selected disabled>-</option>
@@ -37,13 +37,13 @@
 <div>
   <h3 class="question-example" >Submitting Answers</h3>
   <p>How do I submit an answer?</p>
-  <button onclick="unhideForumAnswerPost()">Answer Quesion</button> 
+  <button onclick="unhideForumAnswerPost()">Answer Question</button> 
 </div>
 
 <div>
   <h3 class="question-example" >Any Ideas?</h3>
   <p>Anyone have any idea of what question to ask?</p>
-  <button onclick="unhideForumAnswerPost()">Answer Quesion</button> 
+  <button onclick="unhideForumAnswerPost()">Answer Question</button> 
 </div>
 
 {{!-- Answer Question --}}
@@ -52,15 +52,16 @@
     <div class="forum-question-post-header">
       <h2>Provide an Answer!</h2>
     </div>
-    <form id="forum-answer-post-form">
+    <form id="forum-answer-post-form" class="postAnswer">
     	<div>
         <textarea class="question-text-input" id="answer-input" rows="10" placeholder="Write your answer here..."></textarea>
-      </div class="submit-quesion">
+      </div class="submit-question">
+      <input type="checkbox" class="anonymous-checkbox">Anonymous?</input>
       <div style="align-content:center">
         <button class="button-" type="submit" id="button-answer-submit" onclick="hideForumAnswerPost()">Post Answer</button>
-      </div class="submit-quesion">
+      </div class="submit-question">
       <div>
-        <button class="button-cancel-quesion" type="reset" value="Reset" onclick="hideForumAnswerPost()">Cancel</button>
+        <button class="button-cancel-question" type="reset" value="Reset" onclick="hideForumAnswerPost()">Cancel</button>
       </div>
     </form>
   </div>

@@ -41,5 +41,23 @@ module.exports = {
 				if(!forum) return { success: false };
 				return { success: passcode == forum.classCode };
 			});
+	},
+
+	postQuestion ({ title, body, anonymous, urgency }){
+		console.log(`Trying to post a question`);
+		return knex('question').insert({
+			title,
+			body,
+			anonymous,
+			urgency
+		}).debug();
+	},
+
+	postAnswer ({ body, anonymous }){
+		console.log(`Trying to post an answer`);
+		return knex('response').insert({
+			body,
+			anonymous
+		}).debug();
 	}
 }

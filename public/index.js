@@ -55,6 +55,31 @@ if(document.querySelector('.CreateForum') != null){
     });
 }
 
+if(document.querySelector('.PostQuestion') != null){
+    var PostQuestion = document.querySelector('.PostQuestion');
+    PostQuestion.addEventListener('submit', (e) => {
+        console.log('Posting question...');
+        e.preventDefault();
+        const title = PostQuestion.querySelector('.question-title-input').value;
+        const body = PostQuestion.querySelector('.question-text-input').value;
+        const anonymous = PostQuestion.querySelector('.anonymous-checkbox').checked;
+        var urgency = PostQuestion.querySelector('.question-urgent').value;
+        if(urgency == '-') urgency = 0
+        post('/postQuestion', { title, body, anonymous, urgency });
+    });
+}
+
+if(document.querySelector('.postAnswer') != null){
+    var postAnswer = document.querySelector('.postAnswer');
+    postAnswer.addEventListener('submit', (e) => {
+        console('Posting response...');
+        e.preventDefault();
+        const body = postAnswer.querySelector('.question-text-input').value;
+        const anonymous = postAnswer.querySelector('.anonymous-checkbox').checked;
+        post('/postAnswer', { body, anonymous });
+    });
+}
+
 function post(path, data){
     return window.fetch(path, {
         method: 'POST',

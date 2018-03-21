@@ -123,7 +123,7 @@ app.post('/createUser', (req, res) => {
       username: req.body.username,
       password: req.body.password
     })
-    .then( () => res.sendStatus(200));
+    .then( () => res.sendStatus(200))
 });
 
 /*app.post('/_loginGetResult', function (req, res)
@@ -142,7 +142,7 @@ app.post('/login', (req, res) => {
     .then(({ success }) => {
       if(success) res.sendStatus(200);
       else res.sendStatus(401);
-    });
+    })
 });
 
 /*app.post('/_createGetResult', function (req, res)
@@ -177,7 +177,27 @@ app.post('/joinForum', (req, res) => {
     .then(({ success }) => {
       if(success) res.sendStatus(200);
       else res.sendStatus(401);
-    });
+    })
+});
+
+app.post('/postQuestion', (req, res) => {
+  store
+    .postQuestion({
+      title: req.body.title,
+      body: req.body.body,
+      anonymous: req.body.anonymous,
+      urgency: req.body.urgency
+    })
+    .then( () => res.sendStatus(200));
+});
+
+app.post('/postAnswer', (req, res) => {
+  store
+    .postAnswer({
+      body: req.body.body,
+      anonymous: req.body.anonymous
+    })
+    .then( () => res.sendStatus(200));
 });
 
 app.get('*', function (req, res) 
